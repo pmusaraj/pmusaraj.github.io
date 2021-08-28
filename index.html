@@ -3,6 +3,7 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=yes, viewport-fit=cover">
     <title>pmusaraj</title>
     <style type="text/css">
         body {
@@ -15,8 +16,7 @@
             width: 100%;
             height: calc(100vh - env(safe-area-inset-bottom));
             box-sizing: border-box;
-            padding-left: 1em;
-            padding-right: 1em;
+            padding: 1em;
             display: flex;
             flex-direction: column;
         }
@@ -24,13 +24,14 @@
         .textarea {
             flex-grow: 1;
             margin-bottom: 1em;
-            padding: 1em;
         }
 
         textarea {
             height: 100%;
             width: 90%;
             box-sizing: border-box;
+            font-size: 18px;
+            padding: 1em;
         }
     </style>
 </head>
@@ -41,7 +42,7 @@
             <textarea></textarea>
         </div>
         <div class="button">
-            <button>Button</button>
+            <button>Submit</button>
         </div>
     </div>
 </body>
