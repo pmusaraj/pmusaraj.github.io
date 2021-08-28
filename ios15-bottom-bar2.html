@@ -6,16 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=yes">
     <title>Floating address bar when keyboard visible</title>
     <style type="text/css">
-        html, body {
+        html,
+        body {
             background-color: azure;
             padding: 0;
             margin: 0;
         }
 
         .fixed-element {
-            position: fixed;
-            top: 0px;
-            left: 0px;
             width: 100%;
             height: calc(var(--composer-vh, 100vh) - env(safe-area-inset-bottom) - env(safe-area-inset-top));
             box-sizing: border-box;
@@ -70,4 +68,5 @@
         window.visualViewport.addEventListener("resize", viewportResize);
     </script>
 </body>
+
 </html>
