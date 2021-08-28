@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=yes">
+    <title>Floating address bar when keyboard visible</title>
+    <style type="text/css">
+        html,
+        body {
+            background-color: azure;
+            padding: 0;
+            margin: 0;
+        }
+
+        .fixed-element {
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: calc(var(--composer-vh, 100vh) - env(safe-area-inset-bottom) - env(safe-area-inset-top));
+            box-sizing: border-box;
+            padding: 0;
+            border: 1px dashed red;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .textarea {
+            flex-grow: 1;
+            box-sizing: border-box;
+            padding: 0.5em;
+        }
+
+        textarea {
+            height: 100%;
+            width: 100%;
+            box-sizing: border-box;
+            font-size: 18px;
+            padding: 1em;
+        }
+
+        .button {
+            padding: 0.5em;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body class="home">
+    <div class="stuff">
+        <h3>This is some stuff I am working on</h3>
+        <a href="ios15-bottom-bar.html">iOS15 issue with bottom bar and a fixed element</a>
+        <div class="textarea">
+            <textarea>Some text here</textarea>
+        </div>
+        <div class="button">
+            <button>Submit</button>
+        </div>
+    </div>
+</body>
+
+</html>
