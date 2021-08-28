@@ -6,32 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=yes, viewport-fit=cover">
     <title>pmusaraj</title>
     <style type="text/css">
-        body {
+        html, body {
             background-color: azure;
+            padding: 0;
+            margin: 0;
         }
 
         .fixed-element {
             position: fixed;
             bottom: 0px;
+            left: 0px;
             width: 100%;
-            height: calc(100vh - env(safe-area-inset-bottom));
+            height: calc(var(--composer-vh, 100vh) - env(safe-area-inset-bottom) - env(safe-area-inset-top));
             box-sizing: border-box;
-            padding: 1em;
+            padding: 0;
+            border: 1px dashed red;
             display: flex;
             flex-direction: column;
         }
 
         .textarea {
             flex-grow: 1;
-            margin-bottom: 1em;
+            box-sizing: border-box;
+            padding: 0.5em;
         }
 
         textarea {
             height: 100%;
-            width: 90%;
+            width: 100%;
             box-sizing: border-box;
             font-size: 18px;
             padding: 1em;
+        }
+
+        .button {
+            padding: 0.5em;
+            box-sizing: border-box;
         }
     </style>
 </head>
@@ -39,11 +49,21 @@
 <body class="home">
     <div class="fixed-element">
         <div class="textarea">
-            <textarea></textarea>
+            <textarea>Some text here</textarea>
         </div>
         <div class="button">
             <button>Submit</button>
         </div>
     </div>
+    <script type="text/javascript">
+        function viewportResize() {
+            const composerVH = window.visualViewport.height,
+                doc = document.documentElement;
+            console.log(composerVH);
+            doc.style.setProperty("--composer-vh", `${composerVH}px`);
+        }
+        console.log(window.visualViewport);
+        window.visualViewport.addEventListener("resize", viewportResize);
+    </script>
 </body>
 </html>
